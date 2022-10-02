@@ -42,13 +42,11 @@
     </style>
 </head>
 
-<body>
-    <img src= "images/download.jpeg", alt="Boston Streets">
+<body> 
  <div class="Main">
     <div class= "heading">
 	<h1>Boston Price Prediction</h1>
     </div>
-     <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
       <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
     	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
@@ -66,7 +64,7 @@
 
        
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <button type="submit" class="button_class">Predict</button>
     </form>
 
    <br>

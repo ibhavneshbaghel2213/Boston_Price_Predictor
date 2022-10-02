@@ -15,13 +15,13 @@ model = pickle.load(open('boston_regressor.pkl','rb'))
 def home():
     return render_template('home.html')
 
-# @app.route('/predition', methods = ['POST'])
-# def prediction():
-#     data = request.json['data']
-#     new_data = np.array(list(data.values())).reshape(1,-1)
-#     scaler_data = scaler.transform(new_data)
-#     result = model.predict(scaler_data)
-#     return jsonify(result[0])
+@app.route('/predition', methods = ['POST'])
+def prediction():
+    data = request.json['data']
+    new_data = np.array(list(data.values())).reshape(1,-1)
+    scaler_data = scaler.transform(new_data)
+    result = model.predict(scaler_data)
+    return jsonify(result[0])
 
 @app.route('/Predicted', methods = ['POST'])
 def predict():
